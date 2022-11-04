@@ -24,19 +24,6 @@ class Token:
         return self.ham + self.spam
 
 
-@dataclass
-class Token:
-    ham: int = 1
-    spam: int = 1
-
-    def add(self, amount: int, data_type: Type):
-        x = getattr(self, data_type)
-        setattr(self, data_type, x + amount)
-
-    def total(self):
-        return self.ham + self.spam
-
-
 class NaiveBayes:
     def __init__(self):
         self.tokens = dict()
@@ -52,7 +39,7 @@ class NaiveBayes:
         # recalc all_messages
         t = Token()
         for k, v in self.tokens.items():
-            v:Token
+            v: Token
             t.add(v.ham, "ham")
             t.add(v.spam, "spam")
         self.all_messages = t
