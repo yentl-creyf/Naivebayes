@@ -1,5 +1,5 @@
 # usage
-```
+```py
 from src.naive_bayes import NaiveBayes, Type
 
 # from scratch usage
